@@ -1,6 +1,7 @@
 package com.codeclan.wordcounter;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by user on 14/03/2017.
@@ -30,6 +31,19 @@ public class WordCounter {
             wordCount.put(word, count);
         }
         return wordCount;
+    }
+
+    public String wordCountAsString(){
+        String output = new String();
+        int count = 1;
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()){
+            output += entry.getKey() + ": " + entry.getValue();
+            if (count < getWordCountSize()){
+                output += ", ";
+                count++;
+            }
+        }
+        return output;
     }
 
 }

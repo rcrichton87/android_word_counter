@@ -39,8 +39,14 @@ public class WordCounterTest {
         expected.put("times",  1);
         HashMap<String, Integer> actual = wordCounter.getWordCount(string);
         assertEquals(expected, actual);
+    }
 
-
+    @Test
+    public void testWordCountAsString(){
+        String expected = "the: 1, times: 1, of: 1, was: 2, best: 1, it: 2";
+        wordCounter.getWordCount(string);
+        String actual = wordCounter.wordCountAsString();
+        assertEquals(expected, actual);
     }
 
 }
